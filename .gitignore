@@ -1,0 +1,7 @@
+### 因為GitLab上的Repository多一層目錄... 暫時先這樣解 ###
+.idea
+*.log
+*.gz
+*.class
+*.iml
+
