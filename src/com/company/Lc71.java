@@ -15,9 +15,6 @@ package com.company;
  * Return the simplified canonical path.
  */
 
-
-import com.company.Answer;
-
 import java.util.Stack;
 
 public class Lc71 implements Answer {

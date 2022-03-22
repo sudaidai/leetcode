@@ -1,7 +1,5 @@
 package com.company;
 
-import com.company.Answer;
-
 import java.util.Stack;
 
 /*
