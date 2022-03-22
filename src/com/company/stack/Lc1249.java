@@ -1,4 +1,6 @@
-package com.company;
+package com.company.stack;
+
+import com.company.Answer;
 
 import java.util.Stack;
 
@@ -16,7 +18,7 @@ import java.util.Stack;
  * It can be written as (A), where A is a valid string.
  */
 
-public class Lc1249 implements Answer{
+public class Lc1249 implements Answer {
     @Override
     public int getIndex() {
         return 1249;
