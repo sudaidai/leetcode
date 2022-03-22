@@ -1,4 +1,4 @@
-package com.company.stack;
+package com.company;
 
 /*
  * 71. Simplify Path
@@ -29,7 +29,6 @@ public class Lc71 implements Answer {
     public String simplifyPath(String path) {
         Stack<String> stack = new Stack<>();
         String txt[] = path.split("/");
-        String tag = "";
 
         for(String t : txt){
             if(!(t.equals("") || t.equals(".") || t.equals(".."))) {
