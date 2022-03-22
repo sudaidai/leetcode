@@ -40,28 +40,34 @@ public class Lc1249 implements Answer{
         return new String(ans, 0, i);
     }
 
-    public String minRemoveToMakeValid_2(String s) {
+    public String minRemoveToMakeValid_2(String str) {
         Stack<Integer> stack = new Stack<>();
 
         char tag = '_';
-        char ch[] = s.toCharArray();
+        char cArray[] = str.toCharArray();
 
-        for(int i = 0; i < ch.length; i++){
-            if(ch[i] == '(') stack.push(i);
-            else if(ch[i] == ')'){
-                if(stack.isEmpty()) ch[i] = tag;
-                else stack.pop();
+        for(int i=0 ; i<cArray.length ; i++){
+            if(cArray[i] == '(') {
+                stack.push(i);
+            } else if(cArray[i] == ')') {
+                if(stack.empty()) {
+                    cArray[i] = tag;
+                } else {
+                    stack.pop();
+                }
             }
         }
 
-        while(!stack.isEmpty()){
-            ch[stack.pop()] = tag;
+        while(!stack.empty()) {
+            cArray[stack.pop()] = tag;
         }
 
         StringBuilder sb = new StringBuilder();
 
-        for(int i = 0; i < ch.length; i++){
-            if(ch[i] != tag) sb.append(ch[i]);
+        for(int i=0 ; i<cArray.length ; i++) {
+            if(cArray[i] != tag) {
+                sb.append(cArray[i]);
+            }
         }
 
         return sb.toString();
