@@ -11,7 +11,8 @@ package com.company;
 
 import com.company.data.TreeNode;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 
 public class Lc114 implements Answer{
 
@@ -28,10 +29,10 @@ public class Lc114 implements Answer{
     private void preorder(TreeNode root) {
         TreeNode pre = new TreeNode();
 
-        Stack<TreeNode> stack = new Stack<>();
+        Deque<TreeNode> stack = new LinkedList<>();
         stack.push(root);
 
-        while(!stack.empty()) {
+        while(!stack.isEmpty()) {
             TreeNode tn = stack.pop();
             if(tn != null) {
                 if(tn.right != null) {

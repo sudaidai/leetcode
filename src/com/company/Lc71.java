@@ -16,7 +16,8 @@ package com.company;
  * Return the simplified canonical path.
  */
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 
 public class Lc71 implements Answer {
     @Override
@@ -25,23 +26,23 @@ public class Lc71 implements Answer {
     }
 
     public String simplifyPath(String path) {
-        Stack<String> stack = new Stack<>();
+        Deque<String> stack = new LinkedList<>();
         String txt[] = path.split("/");
 
         for(String t : txt){
             if(!(t.equals("") || t.equals(".") || t.equals(".."))) {
                 stack.push(t);
-            }else if(!stack.empty() && t.equals("..")){
+            }else if(!stack.isEmpty() && t.equals("..")){
                 stack.pop();
             }
         }
 
-        if(stack.empty()) {
+        if(stack.isEmpty()) {
             return "/";
         }
 
         StringBuilder sb = new StringBuilder();
-        while(!stack.empty()){
+        while(!stack.isEmpty()){
             sb.insert(0, "/" + stack.pop());
         }
         return sb.toString();

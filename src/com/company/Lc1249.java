@@ -1,6 +1,7 @@
 package com.company;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 
 /*
  * 1249. Minimum Remove to Make Valid Parentheses
@@ -55,7 +56,7 @@ public class Lc1249 implements Answer {
     }
 
     public String minRemoveToMakeValid_2(String str) {
-        Stack<Integer> stack = new Stack<>();
+        Deque<Integer> stack = new LinkedList<>();
 
         char tag = '_';
         char cArray[] = str.toCharArray();
@@ -64,7 +65,7 @@ public class Lc1249 implements Answer {
             if(cArray[i] == '(') {
                 stack.push(i);
             } else if(cArray[i] == ')') {
-                if(stack.empty()) {
+                if(stack.isEmpty()) {
                     cArray[i] = tag;
                 } else {
                     stack.pop();
@@ -72,7 +73,7 @@ public class Lc1249 implements Answer {
             }
         }
 
-        while(!stack.empty()) {
+        while(!stack.isEmpty()) {
             cArray[stack.pop()] = tag;
         }
 
