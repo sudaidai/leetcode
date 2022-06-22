@@ -23,7 +23,7 @@ public class Lc1 implements Answer{
     // n:  nums.length
     // TC: O(n^2), steps: n*(n-1)/2
     // SC: O(1)
-    public static int[] twoSum(int[] nums, int target) {
+    public int[] twoSum(int[] nums, int target) {
         int n = nums.length;
         for(int i=1 ; i<n ; i++){
             for(int j=i ; j<n ; j++){
@@ -37,7 +37,7 @@ public class Lc1 implements Answer{
     // n:  nums.length
     // TC: O(n), steps: 2*n + n*log(n)
     // SC: O(n)
-    public static int[] twoSum_2(int[] nums, int target) {
+    public int[] twoSum_2(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         int diff;
         for (int i = 0; i < nums.length; i++) {
