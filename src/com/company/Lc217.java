@@ -17,7 +17,7 @@ public class Lc217 implements Answer{
     }
 
     // n:  nums.length
-    // TC: Θ(n*log(n)) ~ O(n^2), steps: n*log(n)+n | n^2 + n
+    // TC: O(n^2) ~ Θ(n*log(n)), steps: n*log(n)+n | n^2 + n
     // SC: O(1) ~ O(log(n))
     public boolean containsDuplicate(int[] nums) {
         Arrays.sort(nums);
