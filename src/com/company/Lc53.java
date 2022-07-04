@@ -14,6 +14,8 @@ public class Lc53 implements Answer {
         return 53;
     }
 
+    // https://leetcode.com/problems/maximum-subarray/discuss/405559/Easy-Understand-Java-Solutions-with-Explanations-(B-F-Divide-And-Conquer-DP)
+
     // n:  nums.length
     // TC: O(n), steps: 3*n
     // SC: O(1)
@@ -28,16 +30,17 @@ public class Lc53 implements Answer {
         return max;
     }
 
-    // Sliding Window
     // n:  nums.length
     // TC: O(n), steps: 2*n
     // SC: O(1)
     public int maxSubArray_2(int[] nums) {
-        int a = nums[0], b = nums[0];
-        for (int i = 1; i < nums.length; i++) {
-            a = Math.max(a + nums[i], nums[i]);
-            b = Math.max(a, b);
+        int n = nums.length;
+        int SUM = nums[0];
+        int OPT = nums[0];
+        for (int i = 1; i < n; ++i) {
+            SUM = Math.max(SUM + nums[i], nums[i]);
+            OPT = Math.max(OPT, SUM);
         }
-        return b;
+        return OPT;
     }
 }
