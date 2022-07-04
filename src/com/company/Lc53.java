@@ -14,7 +14,30 @@ public class Lc53 implements Answer {
         return 53;
     }
 
+    // n:  nums.length
+    // TC: O(n), steps: 3*n
+    // SC: O(1)
     public int maxSubArray(int[] nums) {
-        return 0;
+        int max = Integer.MIN_VALUE;
+        int buffer = 0;
+        for (int i = 0; i < nums.length; i++) {
+            buffer += nums[i];
+            if (buffer > max) max = buffer;
+            if (buffer < 0) buffer = 0;
+        }
+        return max;
+    }
+
+    // Sliding Window
+    // n:  nums.length
+    // TC: O(n), steps: 2*n
+    // SC: O(1)
+    public int maxSubArray_2(int[] nums) {
+        int a = nums[0], b = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            a = Math.max(a + nums[i], nums[i]);
+            b = Math.max(a, b);
+        }
+        return b;
     }
 }
