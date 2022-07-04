@@ -28,8 +28,6 @@ public class Lc238 implements Answer {
      * Given an array S, and N_i is the ith element of S,
      * there P_i = L_i * R_i, where P_i the product without N_i, L_i supplies
      * DIAGRAM's left element, and R_i supplies DIAGRAM's right element.
-     *
-     *
      */
 
     // n:  nums.length
