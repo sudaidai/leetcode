@@ -12,7 +12,6 @@ package com.company;
  * You may not modify the values in the list's nodes. Only nodes themselves may be changed.
  */
 
-import com.company.data.ArrayStack;
 import com.company.data.ListNode;
 
 import java.util.Deque;
