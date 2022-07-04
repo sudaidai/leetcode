@@ -9,7 +9,7 @@ package com.company;
  * You must write an algorithm that runs in O(n) time and without using the division operation.
  */
 
-public class Lc238 implements Answer{
+public class Lc238 implements Answer {
 
     @Override
     public int getIndex() {
@@ -40,11 +40,11 @@ public class Lc238 implements Answer{
         int[] product = new int[n];
         // left
         product[0] = 1;
-        for (int i=1 ; i<n ; i++) {
-            product[i] = product[i-1] * nums[i-1];
+        for (int i = 1; i < n; i++) {
+            product[i] = product[i - 1] * nums[i - 1];
         }
         // *right
-        for (int i=n-1, right=1 ; i>=0 ; i--) {
+        for (int i = n - 1, right = 1; i >= 0; i--) {
             product[i] *= right;
             right *= nums[i];
         }
