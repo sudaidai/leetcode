@@ -46,8 +46,8 @@ public class Lc152 implements Answer {
             p1 *= nums[i];
             p2 *= nums[n - 1 - i];
             max = Math.max(max, Math.max(p1, p2));
-            if(p1 == 0) p1 = 1;
-            if(p2 == 0) p2 = 1;
+            if (p1 == 0) p1 = 1;
+            if (p2 == 0) p2 = 1;
         }
         return max;
     }
