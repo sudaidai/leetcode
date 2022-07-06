@@ -29,7 +29,7 @@ public class Lc153 implements Answer {
             if (nums[left] <= nums[right]) {
                 return nums[left];
             }
-            int mid = (left + right) >> 1;
+            int mid = (left + right) >>> 1;
             if (nums[left] <= nums[mid]) {
                 left = mid + 1;
             } else {
