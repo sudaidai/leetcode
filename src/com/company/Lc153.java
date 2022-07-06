@@ -20,7 +20,9 @@ public class Lc153 implements Answer {
         return 153;
     }
 
-
+    // n:  nums.length
+    // TC: O(log(n)), steps: < n/2
+    // SC: O(1)
     public int findMin(int[] nums) {
         int left = 0, right = nums.length - 1;
         while (left <= right) {
