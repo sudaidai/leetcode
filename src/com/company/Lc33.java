@@ -19,10 +19,10 @@ public class Lc33 implements Answer {
     }
 
     public int search(int[] nums, int target) {
-        return binarySearch(nums, 0, nums.length, target);
+        return binarySearch_2(nums, 0, nums.length - 1, target);
     }
 
-    public static int binarySearch(int[] arr, int left, int right, int target) {
+    public int binarySearch(int[] arr, int left, int right, int target) {
         if (right < left) return -1;
         int mid = (right + left) >>> 1;
         if (arr[mid] == target) return mid;
@@ -30,5 +30,34 @@ public class Lc33 implements Answer {
         else if (arr[mid] < target && target <= arr[right]) return binarySearch(arr, mid + 1, right, target);
         else if (arr[mid] > arr[right]) return binarySearch(arr, mid + 1, right, target);
         else return binarySearch(arr, left, mid - 1, target);
+    }
+
+    public int binarySearch_2(int[] arr, int left, int right, int target){
+        while (left <= right) {
+            int mid = (right + left) >>> 1;
+            if (target == arr[mid]) return mid;
+            if (arr[left] <= arr[right]) {
+                if (target < arr[mid]) {
+                    right = mid - 1;
+                } else {
+                    left = mid + 1;
+                }
+            } else {
+                if (arr[mid] < arr[right] && arr[mid] < arr[left]) {
+                    if (arr[mid] < target && target <= arr[right]) {
+                        left = mid + 1;
+                    } else {
+                        right = mid - 1;
+                    }
+                } else {
+                    if (arr[mid] > target && target >= arr[left]) {
+                        right = mid - 1;
+                    } else {
+                        left = mid + 1;
+                    }
+                }
+            }
+        }
+        return -1;
     }
 }
