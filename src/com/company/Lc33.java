@@ -11,6 +11,8 @@ package com.company;
  * You must write an algorithm with O(log n) runtime complexity.
  */
 
+import java.util.Arrays;
+
 public class Lc33 implements Answer {
 
     @Override
@@ -80,5 +82,26 @@ public class Lc33 implements Answer {
             }
         }
         return -1;
+    }
+
+    public int search_3(int[] nums, int target) {
+        int minIdx = findMinIdx(nums);
+        if (target == nums[minIdx]) return minIdx;
+        int m = nums.length;
+        int start = (target <= nums[m - 1]) ? minIdx : 0;
+        int end = (target > nums[m - 1]) ? minIdx : m;
+        int result = Arrays.binarySearch(nums, start, end, target);
+        if (result < 0) return -1;
+        else return result;
+    }
+
+    public int findMinIdx(int[] nums) {
+        int start = 0, end = nums.length - 1;
+        while (start < end) {
+            int mid = start + (end -  start) / 2;
+            if (nums[mid] > nums[end]) start = mid + 1;
+            else end = mid;
+        }
+        return start;
     }
 }
