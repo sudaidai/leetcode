@@ -34,7 +34,7 @@ public class Lc33 implements Answer {
         else return binarySearch(arr, left, mid - 1, target);
     }
 
-    public int binarySearch_2(int[] arr, int left, int right, int target){
+    public int binarySearch_2(int[] arr, int left, int right, int target) {
         while (left <= right) {
             int mid = (right + left) >>> 1;
             if (target == arr[mid]) return mid;
@@ -64,18 +64,17 @@ public class Lc33 implements Answer {
     }
 
     public int search_2(int[] nums, int target) {
-        int left = 0, right = nums.length-1;
-        while(left <= right){
+        int left = 0, right = nums.length - 1;
+        while (left <= right) {
             int mid = (left + right) >>> 1;
-            if(target == nums[mid]) return mid;
-            if(nums[left] <= nums[mid]){
-                if(target < nums[left] || target > nums[mid])
+            if (target == nums[mid]) return mid;
+            if (nums[left] <= nums[mid]) {
+                if (target < nums[left] || target > nums[mid])
                     left = mid + 1;
                 else
                     right = mid - 1;
-            }
-            else{
-                if(target > nums[right] || target < nums[mid])
+            } else {
+                if (target > nums[right] || target < nums[mid])
                     right = mid - 1;
                 else
                     left = mid + 1;
@@ -87,21 +86,21 @@ public class Lc33 implements Answer {
     public int search_3(int[] nums, int target) {
         int minIdx = findMinIdx(nums);
         if (target == nums[minIdx]) return minIdx;
-        int m = nums.length;
-        int start = (target <= nums[m - 1]) ? minIdx : 0;
-        int end = (target > nums[m - 1]) ? minIdx : m;
-        int result = Arrays.binarySearch(nums, start, end, target);
+        int l = nums.length;
+        int left = (target <= nums[l - 1]) ? minIdx : 0;
+        int right = (target > nums[l - 1]) ? minIdx : l;
+        int result = Arrays.binarySearch(nums, left, right, target);
         if (result < 0) return -1;
         else return result;
     }
 
     public int findMinIdx(int[] nums) {
-        int start = 0, end = nums.length - 1;
-        while (start < end) {
-            int mid = start + (end -  start) / 2;
-            if (nums[mid] > nums[end]) start = mid + 1;
-            else end = mid;
+        int left = 0, right = nums.length - 1;
+        while (left < right) {
+            int mid = (left + right) >>> 1;
+            if (nums[mid] > nums[right]) left = mid + 1;
+            else right = mid;
         }
-        return start;
+        return left;
     }
 }
