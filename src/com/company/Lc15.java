@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Lc15 implements Answer {
 
@@ -28,10 +29,7 @@ public class Lc15 implements Answer {
                 int p1 = i + 1, p2 = nums.length - 1;
                 while (p1 < p2) {
                     if (nums[p1] + nums[p2] == -nums[i]) {
-                        List<Integer> triplet = new ArrayList<>();
-                        triplet.add(nums[i]);
-                        triplet.add(nums[p1]);
-                        triplet.add(nums[p2]);
+                        List<Integer> triplet = List.of(nums[i], nums[p1], nums[p2]);
                         triplets.add(triplet);
                         while (p1 < p2 && nums[p1] == nums[p1 + 1]) p1++;
                         while (p1 < p2 && nums[p2] == nums[p2 - 1]) p2--;
