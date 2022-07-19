@@ -17,7 +17,14 @@ public class Lc371 implements Answer {
         return "sum-of-two-integers";
     }
 
-    public int getSum(int[] height) {
-        return Integer.MIN_VALUE;
+    public static int getSum(int a, int b) {
+        while (b != 0) {
+            int c = (a & b) << 1;
+            System.out.println(Integer.toBinaryString(c));
+            a = a ^ b;
+            System.out.println(Integer.toBinaryString(a));
+            b = c;
+        }
+        return a;
     }
 }
