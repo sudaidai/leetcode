@@ -7,11 +7,9 @@ package com.company;
  * Notice that the solution set must not contain duplicate triplets.
  */
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class Lc15 implements Answer {
 
