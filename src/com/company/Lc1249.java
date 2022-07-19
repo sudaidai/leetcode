@@ -23,6 +23,11 @@ public class Lc1249 implements Answer {
         return 1249;
     }
 
+    @Override
+    public String getRoute() {
+        return "minimum-remove-to-make-valid-parentheses";
+    }
+
     public String minRemoveToMakeValid_1(String s) {
         char tag = '_'; // use this tag to replace invalid parentheses
         char[] ans = s.toCharArray();

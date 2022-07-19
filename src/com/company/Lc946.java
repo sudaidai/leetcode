@@ -15,6 +15,11 @@ public class Lc946 implements Answer {
         return 946;
     }
 
+    @Override
+    public String getRoute() {
+        return "validate-stack-sequences";
+    }
+
     public boolean validateStackSequences_1(int[] pushed, int[] popped) {
 
         int len = pushed.length;

@@ -10,8 +10,6 @@ package com.company;
  * You must solve the problem without modifying the array nums and uses only constant extra space.
  */
 
-import java.util.Arrays;
-
 public class Lc287 implements Answer{
 
     @Override
@@ -19,14 +17,18 @@ public class Lc287 implements Answer{
         return 287;
     }
 
+    @Override
+    public String getRoute() {
+        return "find-the-duplicate-number";
+    }
+
     public int findDuplicate(int[] nums) {
-        int[] arr = new int[nums.length];
-        Arrays.fill(arr, 0);
+        boolean[] arr = new boolean[nums.length];
         for(int i : nums) {
-            if(arr[i] == 0) {
-                arr[i] = 1;
-            } else {
+            if(arr[i]) {
                 return i;
+            } else {
+                arr[i] = true;
             }
         }
         return -1;

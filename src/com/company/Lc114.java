@@ -21,6 +21,11 @@ public class Lc114 implements Answer{
         return 114;
     }
 
+    @Override
+    public String getRoute() {
+        return "flatten-binary-tree-to-linked-list";
+    }
+
     public void flatten(TreeNode root) {
 //        preorder(root);
         morris(root);

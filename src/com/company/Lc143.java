@@ -23,6 +23,11 @@ public class Lc143 implements Answer{
         return 143;
     }
 
+    @Override
+    public String getRoute() {
+        return "reorder-list";
+    }
+
     public void reorderList_1(ListNode head) {
         Deque<ListNode> deque = new LinkedList<>();
         ListNode prev = new ListNode(0);

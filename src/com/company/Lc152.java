@@ -16,6 +16,11 @@ public class Lc152 implements Answer {
         return 152;
     }
 
+    @Override
+    public String getRoute() {
+        return "maximum-product-subarray";
+    }
+
     // n:  nums.length
     // TC: O(n), steps: 6*n
     // SC: O(1)

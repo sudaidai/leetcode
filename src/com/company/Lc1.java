@@ -20,6 +20,11 @@ public class Lc1 implements Answer{
         return 1;
     }
 
+    @Override
+    public String getRoute() {
+        return "two-sum";
+    }
+
     // n:  nums.length
     // TC: O(n^2), steps: n*(n-1)/2
     // SC: O(1)

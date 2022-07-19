@@ -16,6 +16,11 @@ public class Lc217 implements Answer{
         return 217;
     }
 
+    @Override
+    public String getRoute() {
+        return "contains-duplicate";
+    }
+
     // n:  nums.length
     // TC: Θ(n*log(n)), steps: n*log(n)+n
     // SC: O(n)

@@ -19,6 +19,11 @@ public class Lc20 implements Answer{
         return 20;
     }
 
+    @Override
+    public String getRoute() {
+        return "valid-parentheses";
+    }
+
     public boolean isValid(String s) {
         if (s == null || s.length() == 0) {
             return false;

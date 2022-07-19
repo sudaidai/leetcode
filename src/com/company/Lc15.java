@@ -18,6 +18,11 @@ public class Lc15 implements Answer {
         return 15;
     }
 
+    @Override
+    public String getRoute() {
+        return "3sum";
+    }
+
     public List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
         List<List<Integer>> triplets = new LinkedList<>();

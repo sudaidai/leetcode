@@ -20,6 +20,11 @@ public class Lc33 implements Answer {
         return 33;
     }
 
+    @Override
+    public String getRoute() {
+        return "search-in-rotated-sorted-array";
+    }
+
     public int search(int[] nums, int target) {
         return binarySearch_2(nums, 0, nums.length - 1, target);
     }

@@ -20,6 +20,11 @@ public class Lc153 implements Answer {
         return 153;
     }
 
+    @Override
+    public String getRoute() {
+        return "find-minimum-in-rotated-sorted-array";
+    }
+
     // n:  nums.length
     // TC: O(log(n)), steps: < n/2
     // SC: O(1)

@@ -14,6 +14,11 @@ public class Lc53 implements Answer {
         return 53;
     }
 
+    @Override
+    public String getRoute() {
+        return "maximum-subarray";
+    }
+
     // https://leetcode.com/problems/maximum-subarray/discuss/405559/Easy-Understand-Java-Solutions-with-Explanations-(B-F-Divide-And-Conquer-DP)
 
     // n:  nums.length

@@ -18,6 +18,11 @@ public class Lc11 implements Answer {
         return 11;
     }
 
+    @Override
+    public String getRoute() {
+        return "container-with-most-water";
+    }
+
     public int maxArea(int[] height) {
         int maxArea = 0, left = 0, right = height.length - 1;
         while (left < right) {

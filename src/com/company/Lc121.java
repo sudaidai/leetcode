@@ -16,6 +16,11 @@ public class Lc121 implements Answer{
         return 121;
     }
 
+    @Override
+    public String getRoute() {
+        return "best-time-to-buy-and-sell-stock";
+    }
+
     // n:  prices.length
     // TC: O(n), steps: 3*n
     // SC: O(1)

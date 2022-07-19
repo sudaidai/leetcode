@@ -25,6 +25,11 @@ public class Lc71 implements Answer {
         return 71;
     }
 
+    @Override
+    public String getRoute() {
+        return "simplify-path";
+    }
+
     public String simplifyPath(String path) {
         Deque<String> stack = new LinkedList<>();
         String txt[] = path.split("/");

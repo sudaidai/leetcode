@@ -16,6 +16,11 @@ public class Lc238 implements Answer {
         return 238;
     }
 
+    @Override
+    public String getRoute() {
+        return "product-of-array-except-self";
+    }
+
     /*
      * Lets take S = [1,2,3,4] as an example. The expected answer is P = [24, 12, 8, 6].
      *
