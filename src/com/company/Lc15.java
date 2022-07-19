@@ -18,7 +18,7 @@ public class Lc15 implements Answer {
         return 15;
     }
 
-    public static List<List<Integer>> threeSum(int[] nums) {
+    public List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
         List<List<Integer>> triplets = new LinkedList<>();
         for (int i = 0; i < nums.length - 2; i++) {
