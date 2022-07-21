@@ -26,11 +26,10 @@ public class Lc338 implements Answer {
     }
 
     /*
-     *  proof for binary number n, n have (floor(n/2) + n%2) 's bits with 1
-     *  for k = 1, 1 have floor(1/2) + 1%2 = 1 's 1 entry.
-     *  for k = n + 1, if floor(n / 2) + n % 2
-     *  1. if n is even, then k have floor(n/2) + n%2 + 1 = floor(n+1 / 2) + 0 + 1 = floor(k/2) + k%2
-     *  2. if n is odd, then k will be even and have the right most bit with 0, so it have floor(k/2)'s bits with 1 and (k+1)%2=0,
-     *  so it comes k have floor(k/2) + k%2 's bits with 1
+     *  proof for binary number n, there are f(n) = floor(n/2) + n%2 bits with entry 1,
+     *  for k = 1, 1 have f(1) = floor(1/2) + 1%2 = 1 's 1 entry.
+     *  for k = n + 1, f(n) = floor(n / 2) + n % 2
+     *  1. if n is even, then k have f(k) = floor(n/2) + n%2 + 1 = floor(n+1 / 2) + 0 + 1 = floor(k/2) + k%2
+     *  2. if n is odd, then k have f(k) = f(k/2) bits with entry 1, and k is even, so it comes f(k) = f(k/2) + k%2
      */
 }
