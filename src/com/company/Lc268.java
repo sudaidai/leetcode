@@ -17,6 +17,7 @@ public class Lc268 implements Answer {
         return "missing-number";
     }
 
+    // a^b^b = a
     public int missingNumber(int[] nums) {
         int xor = 0, i;
         for (i = 0; i < nums.length; i++) {
