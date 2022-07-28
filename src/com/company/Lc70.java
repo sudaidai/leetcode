@@ -22,7 +22,7 @@ public class Lc70 implements Answer {
     public int climbStairs(int n) {
         int f1 = 1;
         int f2 = 1;
-        for(int i = 0; i < n - 1; i++) {
+        for (int i = 0; i < n - 1; i++) {
             int temp = f1;
             f1 = f1 + f2;
             f2 = temp;
@@ -30,9 +30,27 @@ public class Lc70 implements Answer {
         return f1;
     }
 
+    Lc70(){
+        genFib();
+    }
+    private final int size = 46;
+    private int[] fib = new int[size];
+    public void genFib() {
+        fib[0] = 1;
+        fib[1] = 1;
+        for (int i = 0; i < size - 2; i++) {
+            fib[i + 2] = fib[i + 1] + fib[i];
+        }
+    }
+
+    public int climbStairs_2(int n) {
+        return fib[n];
+    }
+
     /*
+    Proof that
     To climbing stairs, if we can either climb 1 or 2 steps, then for climbing to the top n stair, there are
-    n belongs to N, F(n) denotes different ways to climb to the top, and F(n+2) = F(n+1) + F(n)
+    F(n) denotes different ways to climb to the top for n belongs to N and F(n+2) = F(n+1) + F(n)
 
     for n = 1, F(3) = 3 = F(2) + F(1) = 2 + 1
     for n = k, there are k belongs to N and F(k+2) = F(k+1) + F(k)
