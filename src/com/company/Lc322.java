@@ -28,10 +28,16 @@ public class Lc322 implements Answer {
         Arrays.fill(dp, amount + 1);
         dp[0] = 0;
         for (int i = 0; i < coins.length; i++) {
-            for (int j = coins[i]; j <= amount; j++) {
-                dp[j] = Math.min(dp[j], dp[j - coins[i]] + 1);
+            int coin = coins[i];
+            for (int j = coin; j <= amount; j++) {
+                dp[j] = Math.min(dp[j], dp[j - coin] + 1);
             }
         }
         return dp[amount] <= amount ? dp[amount] : -1;
     }
+
+    /*
+    For all coins, there exist cValue denotes coin's value and n > cValue belongs to N
+    such that dp[n] = dp[n - cValue] + 1 ,dp[n] means the min number of coins we need
+     */
 }
