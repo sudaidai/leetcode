@@ -9,6 +9,8 @@ package com.company;
  * You may assume that you have an infinite number of each kind of coin.
  */
 
+import java.util.Arrays;
+
 public class Lc322 implements Answer {
 
     @Override
@@ -22,6 +24,14 @@ public class Lc322 implements Answer {
     }
 
     public int coinChange(int[] coins, int amount) {
-        return 0;
+        int dp[] = new int[amount + 1];
+        Arrays.fill(dp, amount + 1);
+        dp[0] = 0;
+        for (int i = 0; i < coins.length; i++) {
+            for (int j = coins[i]; j <= amount; j++) {
+                dp[j] = Math.min(dp[j], dp[j - coins[i]] + 1);
+            }
+        }
+        return dp[amount] <= amount ? dp[amount] : -1;
     }
 }
