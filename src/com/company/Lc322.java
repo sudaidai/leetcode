@@ -38,6 +38,7 @@ public class Lc322 implements Answer {
 
     /*
     For all coins, there exist cValue denotes coin's value and n > cValue belongs to N
-    such that dp[n] = dp[n - cValue] + 1 ,dp[n] means the min number of coins we need
+    such that dp[n] = dp[n - cValue] + 1 ,dp[n] means the min number of coins we need,
+    if there are no way to add to amount, then dp[n] > amount
      */
 }
