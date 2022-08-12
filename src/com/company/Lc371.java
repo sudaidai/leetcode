@@ -17,7 +17,7 @@ public class Lc371 implements Answer {
         return "sum-of-two-integers";
     }
 
-    public static int getSum(int a, int b) {
+    public int getSum(int a, int b) {
         while (b != 0) {
             int c = (a & b) << 1;
             System.out.println(Integer.toBinaryString(c));
